@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <nav>
+        <a href="/"><button>Add Expenses</button></a>
+        <a href="/report"><button>See Report</button></a>
+    </nav>
+    <ul>
+        <h1>Incomes</h1>
+        <%let sum=0;%>
+        <% for(let i of Expenses){ %>
+            <li style="list-style-type: none">
+                <div class="item_details">
+                    <p class="it"><b><%=i.descrption%> </b></p>
+                    <p class="it">Income : <b><%=i.amount%></b> </p>
+                    <% sum=sum+parseInt(i.amount) %>
+                    <a href="/delete-income/?id=<%=i.id%>" ><button class="delt_but">Remove item</button></a>
+                </div>
+            </li>
+        <% } %>
+        <p>Total-Income : <b><%=sum%></b></p>
+        <form action="/add-incomes" method="POST">
+            <div class="inputs">
+                <input class="input_but" type="text" name="descrption" placeholder="Write Description" required>
+                <input class="input_but" type="text" name="amount" placeholder="Enter Amount" required>
+                <button type="submit">Add</button>
+            </div>
+        </form>
+    </ul>
+</body>
+</html>

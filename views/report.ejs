@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Report.css">
+    <title>Report</title>
+</head>
+<body>
+    <nav>
+        <a href="/"><button>Add Expense</button></a>
+        <a href="/Incomes"><button>Add Income</button></a>
+    </nav>
+    <h1>Report</h1>
+    <%let sum1=0;%>
+    <%for(let i of Income){%>
+        <%sum1=sum1+parseInt(i.amount)%>
+     <% } %>
+     <p>Your Toatal Income : <%=sum1%></p>
+     <%let sum2=0;%>
+    <%for(let i of Expense){%>
+        <%sum2=sum2+parseInt(i.price)*parseInt(i.quantity)%>
+     <% } %>
+     <p>Your Total Expense : <%=sum2%></p>
+     <br>
+     <%let total=sum1-sum2;%>
+     <b>Your Total Saving : <br><br> <%=sum1%>-<%=sum2%> = <%=total%></b>
+</body>
+</html>

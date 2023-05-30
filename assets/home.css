@@ -1,0 +1,36 @@
+body{
+    background-color: tomato;
+    text-align: center;
+    margin: 0px;
+}
+ul{
+    border-radius: 10px;
+    background-color: azure;
+    padding: 0px;
+    width: 30%;
+    margin: auto;
+    margin-top: 5px;
+    padding: 5px; 
+
+}
+.item_details{
+   
+    border-radius: 10px;
+    background-color: bisque;
+    margin: 5px;
+    
+}
+
+.inputs{
+    margin:10px;
+    padding: 1px;
+}
+.input_but{
+    margin: 2px;
+    border-radius: 5px;
+    text-align: center;
+}
+.delt_but{
+    margin: 2px;
+    border-radius: 2px;
+}
